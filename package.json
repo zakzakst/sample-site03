@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp",
+    "build": "gulp build",
+    "nunjucksBuild": "gulp nunjucksBuild",
+    "sassBuild": "gulp sassBuild",
+    "sassLint": "stylelint --fix **/*.scss",
+    "webpack": "gulp webpack",
+    "imageMin": "gulp imageMin"
   },
   "repository": {
     "type": "git",
@@ -22,6 +28,7 @@
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
+    "core-js": "^3.23.4",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -57,5 +64,9 @@
     "terser-webpack-plugin": "^5.3.1",
     "webpack": "^5.69.1",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "bulma-scss": "^0.9.4",
+    "reset-css": "^5.0.1"
   }
 }
