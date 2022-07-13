@@ -1,0 +1,19 @@
+{% extends 'layouts/default.njk' %}
+{% set PAGE_DATA = {
+  TITLE: 'ページタイトル',
+  DESCRIPTION: 'ページ概要'
+} %}
+
+{% block HERO_CONTENT %}
+<div>hero</div>
+{% endblock %}
+
+{% block PAGE_CONTENT %}
+<div>page</div>
+{% endblock %}
+
+{% block FIX_CONTENT %}
+<!-- ▼▼▼ 固定要素（モーダルなど） ▼▼▼ -->
+<div>固定要素</div>
+<!-- ▲▲▲ 固定要素（モーダルなど） ▲▲▲ -->
+{% endblock %}

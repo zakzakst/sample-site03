@@ -1,0 +1,47 @@
+{% macro default(NAV_ITEMS, PAGE_DATA) %}
+<!-- ▼▼▼ ヘッダー（SP） ▼▼▼ -->
+<div class="header-sp__wrapper">
+  <div class="header-sp">
+    <div class="header-sp__logo">
+      {% if PAGE_DATA.NAV == 'top' %}
+        <span href="/">社名○○○○</span>
+      {% else %}
+        <a href="/">社名○○○○</a>
+      {% endif %}
+    </div>
+    <button id="js-header-sp-button" class="header-sp__button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div id="js-header-sp-menu" class="header-sp__menu">
+    <div class="header-sp__menu-content">
+      <ul class="header-sp__menu-nav-items">
+        {% for ITEM in NAV_ITEMS %}
+          {# クラス名を判定 #}
+          {% if ITEM.id == PAGE_DATA.NAV %}
+            {% set CURRENT_CLASS = ' --current' %}
+          {% else %}
+            {% set CURRENT_CLASS = '' %}
+          {% endif %}
+
+          <li class="header-sp__menu-nav-item">
+            <a class="link{{ CURRENT_CLASS }}" href="{{ ITEM.link }}">{{ ITEM.label }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="header-sp__menu-form">
+        <a href="tel:0012345678" class="button --secondary --rounded --has-icon">
+          <span><i class="fas fa-phone button__icon"></i>00-1234-5678</span>
+        </a>
+        <a href="/contact/" class="button --accent --rounded --has-icon">
+          <span><i class="fas fa-envelope button__icon"></i>お問い合わせ</span>
+        </a>
+      </div>
+    </div>
+    <div id="js-header-sp-menu-bg" class="header-sp__menu-bg"></div>
+  </div>
+</div>
+<!-- ▲▲▲ ヘッダー（SP） ▲▲▲ -->
+{% endmacro %}

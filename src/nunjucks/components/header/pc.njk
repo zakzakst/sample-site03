@@ -1,0 +1,35 @@
+{% macro default(NAV_ITEMS, PAGE_DATA) %}
+<!-- ▼▼▼ ヘッダー（PC） ▼▼▼ -->
+<header class="header">
+  <div class="header__logo">
+    {% if PAGE_DATA.NAV == 'top' %}
+      <h1>社名○○○○</h1>
+    {% else %}
+      <a href="/">社名○○○○</a>
+    {% endif %}
+  </div>
+  <ul class="header__nav-items">
+    {% for ITEM in NAV_ITEMS %}
+      {# クラス名を判定 #}
+      {% if ITEM.id == PAGE_DATA.NAV %}
+        {% set CURRENT_CLASS = ' --current' %}
+      {% else %}
+        {% set CURRENT_CLASS = '' %}
+      {% endif %}
+
+      <li class="header__nav-item">
+        <a class="link{{ CURRENT_CLASS }}" href="{{ ITEM.link }}">{{ ITEM.label }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="header__form">
+    {# <a class="button --secondary --rounded --has-icon">
+      <span><i class="fas fa-phone button__icon"></i>00-0000-0000</span>
+    </a> #}
+    <a href="/contact/" class="button --accent --rounded --has-icon">
+      <span><i class="fas fa-envelope button__icon"></i>お問い合わせ</span>
+    </a>
+  </div>
+</header>
+<!-- ▲▲▲ ヘッダー（PC） ▲▲▲ -->
+{% endmacro %}
