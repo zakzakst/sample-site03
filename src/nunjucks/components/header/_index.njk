@@ -27,8 +27,9 @@
 ] %}
 
 {%- import './pc.njk' as HEADER_PC -%}
-{%- import './sp.njk' as HEADER_SP -%}
+{# {%- import './sp.njk' as HEADER_SP -%} #}
 
 
 {{ HEADER_PC.default(NAV_ITEMS, PAGE_DATA) }}
-{{ HEADER_SP.default(NAV_ITEMS, PAGE_DATA) }}
+{# {{ HEADER_SP.default(NAV_ITEMS, PAGE_DATA) }} #}
+

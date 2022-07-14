@@ -11,7 +11,7 @@
   {% endblock %}
   {# ▲▲▲ HEAD（ページ専用） ▲▲▲ #}
 </head>
-<body class="layout__body">
+<body>
   {# ▼▼▼ ページローダー ▼▼▼ #}
   {# {% include '../components/page-loader/page-loader.njk' %} #}
   {# ▲▲▲ ページローダー ▲▲▲ #}
@@ -21,15 +21,13 @@
   {# ▲▲▲ ヘッダー ▲▲▲ #}
 
   <!-- ▼▼▼ ページ内容 ▼▼▼ -->
-  <div id="js-layout-content" class="layout__content">
+  <div>
     {% block HERO_CONTENT %}
     {% endblock %}
-    <div class="container --single pt-5 pb-5">
-      <main>
-        {% block PAGE_CONTENT %}
-        {% endblock %}
-      </main>
-    </div>
+    <main class="container p-5">
+      {% block PAGE_CONTENT %}
+      {% endblock %}
+    </main>
   </div>
   <!-- ▲▲▲ ページ内容 ▲▲▲ -->
 
