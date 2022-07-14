@@ -10,7 +10,8 @@
     "sassBuild": "gulp sassBuild",
     "sassLint": "stylelint --fix **/*.scss",
     "webpack": "gulp webpack",
-    "imageMin": "gulp imageMin"
+    "imageMin": "gulp imageMin",
+    "webpackCli": "webpack"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
+    "@popperjs/core": "^2.11.5",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
@@ -63,6 +65,7 @@
     "stylelint-scss": "^4.1.0",
     "terser-webpack-plugin": "^5.3.1",
     "webpack": "^5.69.1",
+    "webpack-cli": "^4.10.0",
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {

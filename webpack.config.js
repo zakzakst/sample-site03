@@ -6,14 +6,14 @@ const environment = 'production';
 module.exports = {
   entry: {
     script: './src/js/script.js',
-    top: './src/js/top.js',
+    // top: './src/js/top.js',
   },
   resolve: {
     extensions: ['.js'],
   },
   output: {
-    // path: `${__dirname}/dist/js`,
-    path: `${__dirname}/wordpress-theme/js`,
+    path: `${__dirname}/dist/js`,
+    // path: `${__dirname}/wordpress-theme/js`,
     filename: '[name].js',
   },
   mode: environment,

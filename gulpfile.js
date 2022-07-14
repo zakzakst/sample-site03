@@ -8,7 +8,7 @@ const { task, watch, series } = require('gulp');
  */
 const { NUNJUCKS_BUILD } = require('./tasks/nunjucks-build');
 const { SASS_BUILD } = require('./tasks/sass-build');
-// const { WEBPACK } = require('./tasks/webpack');
+const { WEBPACK } = require('./tasks/webpack');
 // const { IMAGE_MIN } = require('./tasks/image-min');
 // const { BROWSER_START, BROWSER_RELOAD } = require('./tasks/browser-sync');
 
@@ -25,5 +25,5 @@ const { SASS_BUILD } = require('./tasks/sass-build');
 // task('build', series(NUNJUCKS_BUILD, SASS_BUILD, WEBPACK));
 task('nunjucksBuild', series(NUNJUCKS_BUILD));
 task('sassBuild', series(SASS_BUILD));
-// task('webpack', series(WEBPACK));
+task('webpack', series(WEBPACK));
 // task('imageMin', series(IMAGE_MIN));
