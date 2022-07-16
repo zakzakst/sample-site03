@@ -1,28 +1,29 @@
 {% set NAV_ITEMS = [
   {
-    id: 'about',
-    link: '/about.html',
-    label: '○○○○について'
+    heading: '製品情報',
+    links: [
+      { link: '#', label: '製品情報トップ' },
+      { link: '#', label: '製品詳細' },
+      { link: '#', label: '導入のご相談' },
+      { link: '#', label: '導入事例' }
+    ]
   },
   {
-    id: 'menu',
-    link: '/menu.html',
-    label: 'メニュー'
+    heading: 'お知らせ',
+    links: [
+      { link: '#', label: 'ニュースリリーストップ' },
+      { link: '#', label: '月別アーカイブ' }
+    ]
   },
   {
-    id: 'cafe',
-    link: '/cafe.html',
-    label: '店内設備'
-  },
-  {
-    id: 'news',
-    link: '/news/',
-    label: 'お知らせ'
-  },
-  {
-    id: 'recruit',
-    link: '/recruit.html',
-    label: '採用情報'
+    heading: '会社情報',
+    links: [
+      { link: '#', label: '会社情報トップ' },
+      { link: '#', label: '企業概要' },
+      { link: '#', label: '社長挨拶' },
+      { link: '#', label: '事業案内' },
+      { link: '#', label: 'アクセスマップ' }
+    ]
   }
 ] %}
 
@@ -38,21 +39,6 @@
   {
     href: '#',
     icon: 'fab fa-twitter'
-  }
-] %}
-
-{% set TABLE_ITEMS = [
-  {
-    term: '所在地',
-    definition: '東京都○○区○○町 0-00-00'
-  },
-  {
-    term: 'TEL',
-    definition: '00-1234-5678'
-  },
-  {
-    term: 'MAIL',
-    definition: 'xxxx@co.jp'
   }
 ] %}
 
@@ -96,7 +82,35 @@
   </div>
 </footer> #}
 <footer class="footer">
-  <div class="content has-text-centered">
+  <div class="columns">
+    <div class="column is-8">
+      <div class="columns">
+        {% for ITEM in NAV_ITEMS %}
+          <div class="column is-4">
+            <div class="columns">
+              <div class="column is-4">{{ ITEM.heading }}</div>
+              <div class="column is-8">
+                <ul>
+                  {% for LINK in ITEM.links %}
+                    <li><a href="{{ LINK.href }}">{{ LINK.label }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="column is-4 has-text-right">
+      <div>お問い合わせ</div>
+      <ul>
+        <li>03-1234-5678</li>
+        <li>adobexd@mail.com</li>
+        <li>よくあるご質問</li>
+      </ul>
+    </div>
+  </div>
+  <div class="content has-text-right">
     <p>Copyright &copy; XXXXX 2022. All Rights Reserved.</p>
   </div>
 </footer>
