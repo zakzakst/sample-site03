@@ -24,7 +24,7 @@
   <div>
     {% block HERO_CONTENT %}
     {% endblock %}
-    <main class="container p-5">
+    <main class="container px-5 py-6">
       <div class="columns">
         <div class="column is-8">
           {% block PAGE_CONTENT %}
@@ -33,6 +33,10 @@
         <div class="column is-4">
           {% include '../components/aside.njk' %}
         </div>
+      </div>
+      <div class="mt-6">
+        {% block BOTTOM_CONTENT %}
+        {% endblock %}
       </div>
     </main>
   </div>
