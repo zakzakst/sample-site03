@@ -1,10 +1,3 @@
-{% extends 'layouts/has-aside.njk' %}
-{% set PAGE_DATA = {
-  TITLE: '製品情報',
-  DESCRIPTION: 'ページ概要',
-  NAV: 'product'
-} %}
-
 {% set PRODUCTS = [
   {
     name: '製品名が入ります',
@@ -38,39 +31,13 @@
   }
 ] %}
 
-{% set TAB_ITEMS = [
-  {
-    name: '全て',
-    link: '#',
-    active: true
-  },
-  {
-    name: 'カテゴリー1',
-    link: '#',
-    active: false
-  },
-  {
-    name: 'カテゴリー2',
-    link: '#',
-    active: false
-  }
-] %}
-
 {# ▼▼▼ コンポーネント読み込み ▼▼▼ #}
-{% from 'components/hero.njk' import default as HERO %}
-{% from 'components/product-links.njk' import default as PRODUCT_LINKS %}
-{% from 'components/tabs.njk' import default as TABS %}
+{% from 'components/product-links.njk' import small as PRODUCT_LINKS %}
 {# ▲▲▲ コンポーネント読み込み ▲▲▲ #}
 
-{% block HERO_CONTENT %}
-  {{ HERO('製品情報', 'PRODUCT') }}
-{% endblock %}
-
-{% block PAGE_CONTENT %}
-  {{ TABS(TAB_ITEMS) }}
+<!-- ▼▼▼ 製品情報 ▼▼▼ -->
+<section class="container px-5 py-6">
+  <h2>製品情報</h2>
   {{ PRODUCT_LINKS(PRODUCTS) }}
-{% endblock %}
-
-{% block BOTTOM_CONTENT %}
-  {% include 'components/contact.njk' %}
-{% endblock %}
+</section>
+<!-- ▲▲▲ 製品情報 ▲▲▲ -->
